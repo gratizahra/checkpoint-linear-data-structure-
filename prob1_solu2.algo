@@ -1,0 +1,33 @@
+ALGORITHM Distinct_elements
+VAR 
+ Htab:HASH_TABLE<INTEGER,INTEGER>;
+ set1:ARRAY_OF INTEGER [i];
+ set2:ARRAY_OF INTEGER [j];
+ sum:INTEGER=0;
+ count:INTEGER
+BEGIN
+   FOR i FROM 0 TO set1.length DO 
+    Htab.insert(set1[i],1);
+    END_FOR
+  FOR j FROM 0 TO set2.length DO
+    IF(Htab.lookup (set2[j])==FALSE)
+      THEN Htab.insert((set2[j]),1)
+      ELSE 
+      Htab.insert(set2[j]),2);
+    END_IF
+   END_FOR
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+     IF (hashset.get(set1[i]=1) THEN
+    sum:=set1[i]+sum;
+ELSE
+sum:=0;
+      END_IF
+      END_FOR
+FOR j FROM 0 TO set2.length-1 STEP 1  DO
+IF (hashset.get(set2[j]=1) THEN
+    sum:=set2[j]+sum;
+ELSE
+sum:=0;
+END_IF
+END_FOR
+END
